@@ -1,37 +1,31 @@
-.mainContainer{
-    /* background-color: aqua ; */
-    word-spacing: normal;
-    
+.mainContainer {
+  display: flex;
 }
-input[type=text], input[type=tel] {
-    width: 30%;
-    padding: 10px 10px;
-    margin: 5px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
 
-  }
-  
-  input[type=submit]{
-    width:5%;
-    padding: 5px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    margin-bottom: 5%;
+.split {
+  flex: 1;
+  padding: 20px;
+}
 
-  }
+.split.left {
+  order: 1;
+}
 
-  table {
-    width: 50%;
-    border-collapse: collapse;
-    border: 1px solid;
+.split.right {
+  order: 2;
+}
 
+table {
+  width: 100%;
+  border-collapse: collapse;
 }
 
 th, td {
-    padding: 8px;
-    border-bottom: 1px solid #ddd;
-    text-align: center;
-    border: 1px solid;
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}
 
+th {
+  background-color: #f2f2f2;
 }

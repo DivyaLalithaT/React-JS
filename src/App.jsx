@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import "../App.css"
+import React, { useState, useEffect } from 'react';
+import './App.css';
 
 export default function App() {
   const [data, setData] = useState({
@@ -34,7 +34,7 @@ export default function App() {
   }, []);
 
   return (
-    
+    <div className="mainContainer">
       <div className="split left">
         <h1>Login Form</h1>
         <form onSubmit={submitHandler}>
@@ -53,6 +53,27 @@ export default function App() {
           <input type="submit" name="submit" />
         </form>
       </div>
-    
+      <div className="split right">
+        <h1>User Table</h1>
+        <table>
+          <thead>
+            <tr>
+              <th>Username</th>
+              <th>Email</th>
+              <th>Phone</th>
+            </tr>
+          </thead>
+          <tbody>
+            {userList.map((user, index) => (
+              <tr key={index}>
+                <td>{user.username}</td>
+                <td>{user.email}</td>
+                <td>{user.phone}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
   );
 }

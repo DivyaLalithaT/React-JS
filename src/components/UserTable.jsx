@@ -1,4 +1,5 @@
 import React,{useState} from 'react'
+import "../App.css"
 
 export  default function UserTable  ()  {
   const [userList,setUserList] = useState([]);
@@ -7,26 +8,27 @@ export  default function UserTable  ()  {
 
   return (
     
-    <div>
+    <div className="split right">
+        <h1>User Table</h1>
         <table>
           <thead>
             <tr>
               <th>Username</th>
-              <th>Address</th>
-              <th>Phonenumber</th>
+              <th>Email</th>
+              <th>Phone</th>
             </tr>
           </thead>
           <tbody>
             {userList.map((user, index) => (
               <tr key={index}>
-                <td>{user.userName}</td>
-                <td>{user.address}</td>
-                <td>{user.phonenumber}</td>
+                <td>{user.username}</td>
+                <td>{user.email}</td>
+                <td>{user.phone}</td>
               </tr>
             ))}
           </tbody>
         </table>
-    </div>
+      </div>
   )
 }
 
